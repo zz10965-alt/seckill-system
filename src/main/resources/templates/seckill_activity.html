@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+  <title>Flash Sale Mall - Genuine Flash Sale!</title>
+  <link rel="icon" href="img/logo.png">
+
+  <!-- Import styles -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+  <link rel="stylesheet" type="text/css" href="css/all.css" />
+  <link rel="stylesheet" type="text/css" href="css/pages-seckill-index.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <!-- Top of page -->
+  <div id="nav-bottom">
+    <!-- Top -->
+    <div class="nav-top">
+      <div class="top">
+        <div class="py-container">
+          <div class="shortcut">
+            <ul class="fl">
+              <li class="f-item">Welcome!</li>
+              <li class="f-item">Please
+                <a href="login.html" target="_blank">Log In</a>
+                <span>
+                  <a href="register.html" target="_blank">Register Free</a>
+                </span>
+              </li>
+            </ul>
+            <div class="fr typelist">
+              <ul class="types">
+                <li class="f-item">
+                  <span>My Orders</span>
+                </li>
+
+                <li class="f-item">
+                  <span>
+                    <a href="cart.html" target="_blank">My Cart</a>
+                  </span>
+                </li>
+                <li class="f-item">
+                  <span>
+                    <a href="home.html" target="_blank">Account Center</a>
+                  </span>
+                </li>
+                <li class="f-item">
+                  <span>Membership</span>
+                </li>
+                <li class="f-item">
+                  <span>Business Purchase</span>
+                </li>
+                <li class="f-item">
+                  <span>Follow Us</span>
+                </li>
+                <li class="f-item">
+                  <span>
+                    <a href="cooperation.html" target="_blank">Partner With Us</a>
+                  </span>
+                </li>
+                <li class="f-item">
+                  <span>
+                    <a href="shoplogin.html" target="_blank">Merchant Portal</a>
+                  </span>
+                </li>
+                <li class="f-item">
+                  <span>Site Navigation</span></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <div class="header">
+        <div class="py-container">
+          <div class="yui3-g Logo">
+            <div class="yui3-u Left logoArea">
+              <a class="logo-bd" title="Flash Sale Mall" href="index.html" target="_blank"></a>
+            </div>
+            <div class="yui3-u Rit searchArea">
+              <div class="search">
+                <form action="" class="sui-form form-inline">
+                  <!--searchAutoComplete-->
+                  <div class="input-append">
+                    <input type="text" id="autocomplete" class="input-error input-xxlarge" />
+                    <button class="sui-btn btn-xlarge btn-danger" type="button">Search</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-container index">
+    <!--banner-->
+    <div class="banner">
+      <img src="img/_/banner.png" class="img-responsive" alt="">
+    </div>
+    <!-- Flash sale time -->
+    <div class="sectime">
+      <div class="item-time active">
+        <div class="time-clock">12:00</div>
+        <div class="time-state-on">
+          <span class="on-text">On Sale Now</span>
+          <span class="on-over">Ends in: 01:02:34</span>
+        </div>
+      </div>
+      <div class="item-time">
+        <div class="time-clock">14:00</div>
+        <div class="time-state-will">
+          <span>Coming Soon</span>
+        </div>
+      </div>
+      <div class="item-time">
+        <div class="time-clock">16:00</div>
+        <div class="time-state-will">
+          <span>Coming Soon</span>
+        </div>
+      </div>
+      <div class="item-time">
+        <div class="time-clock">18:00</div>
+        <div class="time-state-will">
+          <span>Coming Soon</span>
+        </div>
+      </div>
+      <div class="item-time">
+        <div class="time-clock">20:00</div>
+        <div class="time-state-will">
+          <span>Coming Soon</span>
+        </div>
+      </div>
+    </div>
+    <!-- Flash sale activity list -->
+    <div class="goods-list" id="app">
+      <ul class="seckill" id="seckill">
+        <tr th:each="seckillActivity : ${seckillActivities}">
+          <li class="seckill-item">
+            <div class="pic">
+              <img src="img/_/list.jpg" alt=''>
+            </div>
+            <div class="intro">
+              <span th:text="${seckillActivity.name}">Activity Name</span>
+            </div>
+            <div class='price'>
+              <b class='sec-price' th:text="'￥'+${seckillActivity.seckillPrice}"></b>
+              <b class='ever-price' th:text="'￥'+${seckillActivity.oldPrice}"></b>
+            </div>
+            <div class='num'>
+              <div>999 Sold</div>
+              <div class='progress'>
+                <div class='sui-progress progress-danger'>
+                  <span style='width: 70%;' class='bar'></span>
+                </div>
+              </div>
+              <div>Remaining
+                <b class='owned'>999</b> items</div>
+            </div>
+            <a class='sui-btn btn-block btn-buy' th:href="@{'/item/'+${seckillActivity.id}}" target='_blank'>Buy Now</a>
+          </li>
+        </tr>
+      </ul>
+    </div>
+    <div class="cd-top">
+      <div class="top">
+        <img src="img/_/gotop.png" />
+        <b>TOP</b>
+      </div>
+      <div class="code" id="code">
+        <span>
+          <img src="img/_/code.png" />
+        </span>
+      </div>
+      <div class="erweima">
+        <img src="img/_/erweima.jpg" alt="">
+        <s></s>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top -->
+
+  <!-- Footer -->
+  <!-- Bottom of page -->
+  <div class="clearfix footer">
+    <div class="py-container">
+      <div class="footlink">
+        <div class="Mod-service">
+          <ul class="Mod-Service-list">
+            <li class="grid-service-item intro  intro1">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Genuine Guarantee</h4>
+                <p>Genuine products with invoice provided</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item  intro intro2">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Genuine Guarantee</h4>
+                <p>Genuine products with invoice provided</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item intro  intro3">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Genuine Guarantee</h4>
+                <p>Genuine products with invoice provided</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item  intro intro4">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Genuine Guarantee</h4>
+                <p>Genuine products with invoice provided</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item intro intro5">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Genuine Guarantee</h4>
+                <p>Genuine products with invoice provided</p>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix Mod-list">
+          <div class="yui3-g">
+            <div class="yui3-u-1-6">
+              <h4>Shopping Guide</h4>
+              <ul class="unstyled">
+                <li>Shopping Process</li>
+                <li>Membership Info</li>
+                <li>Travel & Group Buy</li>
+                <li>FAQ</li>
+                <li>Shopping Guide</li>
+              </ul>
+
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Delivery Methods</h4>
+              <ul class="unstyled">
+                <li>Self Pickup</li>
+                <li>211 Express Delivery</li>
+                <li>Delivery Tracking</li>
+                <li>Delivery Fee Standard</li>
+                <li>Overseas Delivery</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Payment Methods</h4>
+              <ul class="unstyled">
+                <li>Cash on Delivery</li>
+                <li>Online Payment</li>
+                <li>Installment Payment</li>
+                <li>Postal Remittance</li>
+                <li>Bank Transfer</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>After-Sales Service</h4>
+              <ul class="unstyled">
+                <li>After-Sales Policy</li>
+                <li>Price Protection</li>
+                <li>Refund Policy</li>
+                <li>Repair / Return & Exchange</li>
+                <li>Cancel Order</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Featured Services</h4>
+              <ul class="unstyled">
+                <li>Treasure Auction</li>
+                <li>DIY PC Building</li>
+                <li>Extended Warranty</li>
+                <li>Pinyougo E-Card</li>
+                <li>Pinyougo Telecom</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Help Center</h4>
+              <img src="img/erwei_jz.png">
+            </div>
+          </div>
+        </div>
+        <div class="Mod-copyright">
+          <ul class="helpLink">
+            <li>About Us
+              <span class="space"></span>
+            </li>
+            <li>Contact Us
+              <span class="space"></span>
+            </li>
+            <li>About Us
+              <span class="space"></span>
+            </li>
+            <li>Merchant Signup
+              <span class="space"></span>
+            </li>
+            <li>Marketing Center
+              <span class="space"></span>
+            </li>
+            <li>Related Links
+              <span class="space"></span>
+            </li>
+            <li>About Us
+              <span class="space"></span>
+            </li>
+            <li>Marketing Center
+              <span class="space"></span>
+            </li>
+            <li>Related Links
+              <span class="space"></span>
+            </li>
+            <li>About Us</li>
+          </ul>
+          <p>Flash Sale System Demo</p>
+          <p>Business Cooperation: zhixian@example.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom of page END -->
+  <!-- Import component library -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+  <script src="https://cdn.bootcss.com/element-ui/2.5.4/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          goodslist: [{
+            intro: 'Apple iPhone 6s 32G Gold 4G Phone (China Mobile/Unicom/Telecom)',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          },
+          {
+            intro: 'Apple iPhone 6s 32G Gold 4G Phone (China Mobile/Unicom/Telecom)',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          }, {
+            intro: 'Apple iPhone 6s 32G Gold 4G Phone (China Mobile/Unicom/Telecom)',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          }, {
+            intro: 'Apple iPhone 6s 32G Gold 4G Phone (China Mobile/Unicom/Telecom)',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          }, {
+            intro: 'Apple iPhone 6s 32G Gold 4G Phone (China Mobile/Unicom/Telecom) ',
+            newprice: '6088 ',
+            oldprice: '6988 ',
+            rate: '87 % ',
+            left: '29 '
+          },
+          {
+            intro: 'Apple iPhone 6s 32G Gold 4G Phone (China Mobile/Unicom/Telecom) ',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          }, {
+            intro: 'Apple iPhone 6s 32G Gold 4G Phone (China Mobile/Unicom/Telecom)',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          }
+          ]
+        }
+      }
+    })
+  </script>
+
+
+
+</body>
+
+</html>

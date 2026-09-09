@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <title>Flash Sale Result</title>
+    <link rel="stylesheet" type="text/css" href="/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/pages-getOrderInfo.css"/>
+</head>
+
+<body>
+<!--head-->
+<!-- Header -->
+<!-- Top of page -->
+<div id="nav-bottom">
+    <!-- Top -->
+    <div class="nav-top">
+        <div class="top">
+            <div class="py-container">
+                <div class="shortcut">
+                    <ul class="fl">
+                        <li class="f-item"></li>
+                        <li class="f-item">Please<a href="login.html" target="_blank">Log In</a>　<span><a href="register.html"
+                                                                                                 target="_blank">Register Free</a></span>
+                        </li>
+                    </ul>
+                    <div class="fr typelist">
+                        <ul class="types">
+                            <li class="f-item"><span>My Orders</span></li>
+
+                            <li class="f-item"><span><a href="cart.html" target="_blank">My Cart</a></span></li>
+                            <li class="f-item"><span>Business Purchase</span></li>
+                            <li class="f-item"><span><a href="cooperation.html" target="_blank">Partner With Us</a></span></li>
+                            <li class="f-item"><span><a href="shoplogin.html" target="_blank">Merchant Portal</a></span></li>
+                            <li class="f-item"><span>Site Navigation</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="py-container">
+                <div class="yui3-g Logo">
+                    <div class="yui3-u Left logoArea">
+                        <a class="logo-bd" title="Qingcheng" href="index.html" target="_blank"></a>
+                    </div>
+                    <div class="yui3-u Rit searchArea">
+                        <div class="search">
+                            <form action="" class="sui-form form-inline">
+                                <!--searchAutoComplete-->
+                                <div class="input-append">
+                                    <input type="text" id="autocomplete" class="input-error input-xxlarge"/>
+                                    <button class="sui-btn btn-xlarge btn-danger" type="button">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="cart py-container" id="cart">
+    <!-- Main content -->
+    <div class="checkout py-container">
+        <div class="checkout-tit">
+            <h4 class="tit-txt">Flash Sale Result</h4>
+        </div>
+        <div class="checkout-steps">
+            <div class="hr"></div>
+            <!-- Payment & delivery -->
+            <div class="payshipInfo">
+                <div class="hr"></div>
+                <div class="step-cont">
+                    <ul class="send-detail">
+                        <li>
+                            <div class="sendGoods">
+                                <em th:text="${resultInfo}"></em>
+                            </div>
+                        </li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="hr"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="submit">
+        <a class="sui-btn btn-danger btn-xlarge" th:href="@{'/seckill/orderQuery/'+ ${orderNo}}"
+           target='_blank'>View Order Info</a>
+    </div>
+</div>
+<!-- Footer -->
+<!-- Bottom of page -->
+<div class="clearfix footer">
+    <div class="py-container">
+        <div class="footlink">
+            <div class="Mod-service">
+                <ul class="Mod-Service-list">
+                    <li class="grid-service-item intro  intro1">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>Genuine Guarantee</h4>
+                            <p>Genuine products with invoice provided</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item  intro intro2">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>Genuine Guarantee</h4>
+                            <p>Genuine products with invoice provided</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item intro  intro3">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>Genuine Guarantee</h4>
+                            <p>Genuine products with invoice provided</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item  intro intro4">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>Genuine Guarantee</h4>
+                            <p>Genuine products with invoice provided</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item intro intro5">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>Genuine Guarantee</h4>
+                            <p>Genuine products with invoice provided</p>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix Mod-list">
+                <div class="yui3-g">
+                    <div class="yui3-u-1-6">
+                        <h4>Shopping Guide</h4>
+                        <ul class="unstyled">
+                            <li>Shopping Process</li>
+                            <li>Membership Info</li>
+                            <li>Travel & Group Buy</li>
+                            <li>FAQ</li>
+                            <li>Shopping Guide</li>
+                        </ul>
+
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>Delivery Methods</h4>
+                        <ul class="unstyled">
+                            <li>Self Pickup</li>
+                            <li>211 Express Delivery</li>
+                            <li>Delivery Tracking</li>
+                            <li>Delivery Fee Standard</li>
+                            <li>Overseas Delivery</li>
+                        </ul>
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>Payment Methods</h4>
+                        <ul class="unstyled">
+                            <li>Cash on Delivery</li>
+                            <li>Online Payment</li>
+                            <li>Installment Payment</li>
+                            <li>Postal Remittance</li>
+                            <li>Bank Transfer</li>
+                        </ul>
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>After-Sales Service</h4>
+                        <ul class="unstyled">
+                            <li>After-Sales Policy</li>
+                            <li>Price Protection</li>
+                            <li>Refund Policy</li>
+                            <li>Repair / Return & Exchange</li>
+                            <li>Cancel Order</li>
+                        </ul>
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>Featured Services</h4>
+                        <ul class="unstyled">
+                            <li>Treasure Auction</li>
+                            <li>DIY PC Building</li>
+                            <li>Extended Warranty</li>
+                            <li>Pinyougo E-Card</li>
+                            <li>Pinyougo Telecom</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bottom of page END -->
+<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+
+<script src="/js/vue.js"></script>
+<script src="/js/axios.js"></script>
+</body>
+</html>
